@@ -1,4 +1,5 @@
-#!/bin/bash 
+#!/bin/bash
+#The nginx's script For HA 
 while  : 
 do 
  nginxpid=`ps -C nginx --no-header | wc -l` 
