@@ -5,7 +5,7 @@ from fabric.colors import *
 from fabric.context_managers import * 
 
 user = 'ec2-user'
-hosts = ['bidder1','bidder2']
+hosts = ['bidder1','bidder2','bidder3']
 
 @task
 def put_task():
@@ -22,4 +22,4 @@ def put_task():
 for host in hosts:
     env.host_string = host
     put_task()
-#    run_task()
+#run_task()
