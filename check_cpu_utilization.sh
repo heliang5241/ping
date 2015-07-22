@@ -153,6 +153,6 @@ if [ ${CPU_USER_MAJOR} -ge $USER_CRITICAL_THRESHOLD ]; then
 else
 
         #echo "The averange value of r in vmstat :${CPU_VMSTAT_R}\c" 
-        echo "CPU STATISTICS OK : ${NAGIOS_DATA};The averange value of r in vmstat:${CPU_VMSTAT_R}"
+        echo "CPU STATISTICS OK : ${NAGIOS_DATA} The averange value of r in vmstat :${CPU_VMSTAT_R}"
         exit $STATE_OK
 fi
