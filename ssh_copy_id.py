@@ -4,6 +4,8 @@ from fabric.api import *
 env.user = 'ec2-user'
 #env.key_filename = '/home/ec2-user/.ssh/id_rsa'
 env.key_filename = '/home/ec2-user/.ssh/id_rsa'
+env.reject_unknown_hosts = False
+
 #hosts = ['pixel',]
 hosts = ['budget', 'adserver', 'bidder1', 'bidder2', 'dns', 'redis1', 'redis2', 'redis3']
 
