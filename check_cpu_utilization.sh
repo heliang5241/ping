@@ -1,6 +1,5 @@
 #!/bin/bash
 # CPU Utilization Statistics plugin for Nagios
-IOSTAT="/usr/bin/iostat"
 # Nagios return codes
 STATE_OK=0
 STATE_WARNING=1
@@ -115,10 +114,8 @@ CPU_REPORT_SECTIONS=`echo ${CPU_REPORT} | grep ';' -o | wc -l`
 CPU_USER=`echo $CPU_REPORT | cut -d ";" -f 2`
 CPU_SYSTEM=`echo $CPU_REPORT | cut -d ";" -f 4`
 CPU_IOWAIT=`echo $CPU_REPORT | cut -d ";" -f 5`
-
-    CPU_STEAL=`echo $CPU_REPORT | cut -d ";" -f 6`
-    CPU_IDLE=`echo $CPU_REPORT | cut -d ";" -f 7`
-    NAGIOS_DATA="user=${CPU_USER}%,system=${CPU_SYSTEM}%,iowait=${CPU_IOWAIT}%,idle=${CPU_IDLE}%"
+CPU_IDLE=`echo $CPU_REPORT | cut -d ";" -f 7`
+NAGIOS_DATA="user=${CPU_USER}%,system=${CPU_SYSTEM}%,iowait=${CPU_IOWAIT}%,idle=${CPU_IDLE}%"
 
 
 # Add for integer shell issue
