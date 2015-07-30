@@ -1,24 +1,25 @@
-class Person():
-	def __init__(self,name = '',age = 0):
-		self._name = name
-		self._age = age 
-	@property
-	def age(self):
-	    return self._age
-	@age.setter
-	def age(self, value):
-	    if 0 < age <= 150:
-	    	self._age = age
-	def __str__(self):
-		return "%s,%d" % (self._name,self._age)
+class Student(object):
 
-p = Person('yhc',33)
-print p
+    @property
+    def score(self):
+        return self._score
 
-p.age = 55
-print p.age
+    @score.setter
+    def score(self, value):
+        if not isinstance(value, int):
+            raise ValueError('score must be an integer!')
+        if value < 0 or value > 100:
+            raise ValueError('score must between 0 ~ 100!')
+        self._score = value
 
-p.age = -4
-print p.age
+s = Student()
+s.score = 69
+print s.score
 
+# b = Student()
+# b.score = 199
+# print b.score
 
+c = Student()
+c.score = 99.5
+print c.score
