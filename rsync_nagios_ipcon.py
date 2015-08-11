@@ -15,7 +15,7 @@ def put_task():
         put("/home/ec2-user/check_ip_connects.sh","/home/ec2-user/check_ip_connects.sh")
         sudo("cp /home/ec2-user/check_ip_connects.sh /usr/local/nagios/libexec/check_ip_connects.sh")
         sudo("chown nagios:nagios /usr/local/nagios/libexec/check_ip_connects.sh")
-	    sudo("chmod +x /usr/local/nagios/libexec/check_ip_connects.sh")
+	sudo("chmod +x /usr/local/nagios/libexec/check_ip_connects.sh")
         sudo("sed '/command\[check_ip_connects\]/d' /usr/local/nagios/etc/nrpe.cfg")
         sudo("sed '/command\[check_cpu_utili\]/a\command\[check_ip_connects]=/usr/loca/nagios/libexec/check_ip_connects.sh' /usr/local/ngios/etc/nrpe.cfg")
         sudo("kill -9 `ps aux | grep nrpe | head -n1 | awk '{print $2}' `")
